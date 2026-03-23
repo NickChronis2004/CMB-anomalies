@@ -1,0 +1,12 @@
+.claude/
+
+# LaTeX build
+*.aux
+*.log
+*.fls
+*.fdb_latexmk
+*.out
+*.synctex.gz
+
+# Planck data (too large for git)
+data/planck_2018/
