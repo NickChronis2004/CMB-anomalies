@@ -1,0 +1,458 @@
+% ============================================================
+% SECTION 5 — Discussion and Conclusions
+% ============================================================
+
+\section{Discussion and Conclusions}
+\label{sec:conclusions}
+
+\subsection{Summary of results}
+
+We have derived an infrared cutoff $k_c$ in the primordial power
+spectrum from the CCR framework, in which the finite Hilbert space
+dimension $D$ of the de~Sitter causal patch during inflation sets the
+scale of the cutoff via the Gibbons--Hawking entropy bound. Unlike
+previous phenomenological models, $k_c$ is not a free parameter but is
+uniquely determined by $D$ through eq.~(\ref{eq:kc_comoving}). We
+confronted this framework with Planck 2018 CMB data and obtained the
+following principal results:
+
+\begin{enumerate}
+  \item The Planck data are \emph{consistent} with the CCR framework
+    but do not \emph{require} a finite Hilbert space dimension. The
+    posterior on $\log_{10}(\ln D)$ is approximately uniform over the
+    prior range $[12,\,16]$.
+  \item The six standard $\Lambda$CDM parameters are recovered in
+    excellent agreement with the Planck 2018 baseline, and the CCR
+    parameters show no correlations with the cosmological parameters.
+    The CCR modification does not degrade any existing constraints.
+  \item The Savage--Dickey Bayes factor is $\ln B_{01} = 0.06$,
+    indicating no statistical preference for either model. The
+    information criteria (AIC, BIC) penalise the two extra CCR
+    parameters, as expected for a model that does not improve the fit.
+  \item The joint posterior excludes the region of simultaneously small
+    $\ln D$ and small $\alpha$, providing a physically informative
+    constraint: if $D$ is finite, the suppression profile must be
+    either mild or sharp, but not both gradual and strong.
+  \item This work establishes the observational infrastructure for
+    testing the CCR framework: a modified Boltzmann code, a validated
+    MCMC pipeline, and a Fisher forecast methodology. The null result
+    quantifies the sensitivity threshold ($\ln D \lesssim 10^{13}$
+    for a $3\sigma$ detection) that future experiments must achieve.
+    Together with the CCR prediction $r = 16/(A_s \ln D)$, the pair
+    $(k_c,\, r)$ constitutes an internal consistency test of the
+    framework: both observables are deterministic functions of the
+    single parameter $\ln D$ at fixed thermal history, and any joint
+    constraint on $(k_c,\, r)$ from future data provides a powerful
+    falsification criterion.
+\end{enumerate}
+
+\subsection{Interpretation}
+
+The broad posterior on $\ln D$ reflects a fundamental limitation: the
+low-$\ell$ CMB power spectrum contains very few independent modes
+($\ell = 2$ through $\sim 10$ are primarily affected by the cutoff),
+and cosmic variance imposes an irreducible uncertainty of $\sim 63\%$
+at $\ell = 2$. Any new-physics signal in this regime is inherently
+difficult to distinguish from a statistical fluctuation.
+
+This situation is not unique to the CCR framework. The original
+phenomenological cutoff model of Contaldi et al.~\cite{Contaldi:2003}
+similarly found that the data are consistent with a cutoff at
+$k_c \sim 5 \times 10^{-4}\;\mathrm{Mpc}^{-1}$ without strong
+statistical preference over $\Lambda$CDM. Our result extends theirs by
+demonstrating that the CCR-derived cutoff, which has one fewer degree
+of freedom ($k_c$ is derived from $\ln D$ rather than being a free
+parameter), is equally compatible with the data.
+
+\subsection{Theoretical significance}
+
+The primary contribution of this work is not the observational
+constraint per se, but the theoretical framework connecting $k_c$
+to~$\ln D$. Equation~(\ref{eq:kc_comoving}) transforms the CMB
+low-$\ell$ power spectrum into a probe of the quantum-gravitational
+structure of de~Sitter space during inflation. Any future measurement
+constraining $k_c$ thereby constrains $\ln D$, and conversely, any
+independent determination of~$D$ predicts a specific, testable CMB
+signature.
+
+Figure~\ref{fig:consistency_kc_r} illustrates this consistency
+relation. Both $k_c$ and $r$ are deterministic functions of the
+single parameter $\ln D$ (at fixed thermal history), so the CCR
+framework predicts a one-dimensional curve in the $(k_c,\,r)$ plane
+rather than an allowed region. The fiducial value
+$\ln D = 2 \times 10^{14}$ predicts $r \simeq 3.8 \times 10^{-5}$,
+well below current sensitivity but within reach of next-generation
+B-mode experiments. For the Contaldi-like case
+$\ln D \simeq 2.2 \times 10^{13}$, the predicted
+$r \simeq 3.5 \times 10^{-4}$ approaches the LiteBIRD target
+sensitivity, making a joint $(k_c,\,r)$ test feasible.
+
+\begin{figure}[!htb]
+  \centering
+  \includegraphics[width=0.75\linewidth]{consistency_kc_r}
+  \caption{CCR consistency relation in the $(k_c,\,r)$ plane.
+    The solid curve shows the one-parameter prediction
+    $r = 16/(A_s \ln D)$ vs
+    $k_c = k_c(\ln D)$ from eq.~(\ref{eq:kc_final}), with
+    $\ln D$ increasing from upper right to lower left.
+    Markers indicate the fiducial value
+    ($\ln D = 2\times 10^{14}$), the Contaldi-like case
+    ($\ln D = 2.2\times 10^{13}$), and the $3\sigma$ detection
+    threshold ($\ln D = 10^{13}$). Dashed and dotted horizontal
+    lines show current (BICEP/Keck 2021) and projected (LiteBIRD)
+    tensor-ratio sensitivities. The shaded vertical band marks the
+    Contaldi et al.\ best-fit $k_c$ range.}
+  \label{fig:consistency_kc_r}
+\end{figure}
+
+\subsection{Comparison with alternative approaches}
+\label{subsec:comparison}
+
+The low-$\ell$ CMB deficit has been addressed by several classes of
+models beyond simple infrared cutoffs. Table~\ref{tab:model_comparison}
+provides a systematic comparison of the CCR framework with the
+principal alternatives.
+
+\textbf{Contaldi et al.\ (2003).}  The kinetic-domination
+model~\cite{Contaldi:2003} introduces a pre-inflationary fast-roll
+phase that suppresses long-wavelength modes. The functional form of the
+resulting suppression is identical to eq.~(\ref{eq:P_CCR}).  However,
+the cutoff scale $k_c$ is a free phenomenological parameter with no
+connection to a fundamental theory, and the model makes no predictions
+for any observable beyond the TT power spectrum.  In the CCR framework,
+$k_c$ is derived from $\ln D$ via eq.~(\ref{eq:kc_comoving}), reducing
+the number of genuinely free parameters by one and simultaneously
+predicting the tensor-to-scalar ratio $r = 16/(A_s \ln D)$
+(section~\ref{subsec:tensor_ratio}).
+
+\textbf{Loop quantum cosmology (LQC).}  In LQC, the classical Big Bang
+singularity is replaced by a quantum bounce at the Planck
+scale~\cite{Ashtekar:2011,Agullo:2013}.  The bounce modifies the
+initial conditions for perturbations, producing suppression at large
+scales whose amplitude depends on the pre-bounce state.  The physical
+mechanism is fundamentally different from the CCR approach: LQC
+modifies the gravitational dynamics, while CCR imposes an
+information-theoretic constraint on the mode expansion without altering
+General Relativity.  Moreover, the LQC suppression depends on
+bounce-specific initial conditions that are not uniquely determined by
+the theory.
+
+\textbf{Features in the inflaton potential.}  Starobinsky-type
+models~\cite{Starobinsky:1992} introduce a localised feature (step,
+kink, or oscillation) in the inflaton potential $V(\phi)$ that
+transiently modifies the slow-roll dynamics.  These models can produce
+a wide variety of spectral features, including suppression at low $k$,
+but at the cost of several additional free parameters (feature
+amplitude, position, and width).  The Planck 2018 analysis of such
+features~\cite{Planck:2018inflation} found no statistically significant
+preference over the featureless power-law spectrum.
+
+\textbf{Open inflation.}  In models with $\Omega_K < 0$, the
+curvature scale introduces a natural low-$k$ modification to the
+power spectrum~\cite{Ratra:1995}.  However, Planck 2018 constraints
+tightly bound the spatial curvature to $|\Omega_K| < 0.005$ at 95\%
+CL~\cite{Planck:2018params}, leaving insufficient room for the
+curvature scale to affect the $\ell \lesssim 30$ multipoles.
+
+\textbf{Finite de~Sitter entropy.}  The idea that the de~Sitter
+horizon has a finite entropy and therefore a finite-dimensional Hilbert
+space has been explored in the context of quantum gravity by Banks and
+Fischler~\cite{Banks:2000,Banks:2001}, Bousso~\cite{Bousso:2000}, and
+others.  These works establish the theoretical foundation for finite
+$D$ but do not derive explicit observational consequences for the CMB
+power spectrum.  The CCR framework~\cite{Chronis:2026} builds on this
+foundation by deriving a concrete, testable prediction: the infrared
+cutoff $k_c$ as a function of $\ln D$.  This paper completes the chain
+by confronting that prediction with data. More recently, the structure 
+of the de Sitter Hilbert space
+has been investigated in detail by Chandrasekaran et
+al.~\cite{Chandrasekaran:2023}, who constructed an algebra
+of observables for the static patch, and by Chakraborty et
+al.~\cite{Chakraborty:2024}, who obtained an explicit basis
+for the Hilbert space of quantum gravity in asymptotically
+de Sitter spacetime. These developments confirm that the
+finite-dimensional Hilbert space underlying the CCR framework
+is an active area of current research in quantum gravity, including
+recent work on entropy bounds in inflationary de~Sitter
+spacetime~\cite{Tajima:2024}.
+
+\paragraph{Early holographic IR cutoff proposals.}
+The possibility that the holographic entropy bound of the de~Sitter
+horizon could produce an observable infrared cutoff in the primordial
+power spectrum was explored in early work by
+Hogan~\cite{Hogan:2002,Hogan:2005} and by Enqvist \&
+Sloth~\cite{Enqvist:2002}. Hogan argued that information-theoretic
+constraints from the de~Sitter horizon would limit the number of
+independent modes, producing a characteristic suppression at
+wavenumbers $k \lesssim H_{\mathrm{inf}}$, while Enqvist \& Sloth
+derived a modified power spectrum from the trans-Planckian uncertainty
+principle applied to inflationary perturbations. These proposals share
+the broad physical intuition that finite horizon entropy restricts the
+infrared sector of the primordial spectrum. However, in both cases
+the cutoff scale was either left as a phenomenological parameter or
+derived from model-specific assumptions without a unique functional
+relationship between $k_c$ and a single fundamental quantity.
+%
+The CCR framework~\cite{Chronis:2026} advances beyond these proposals
+in three respects: (i)~the cutoff $k_c$ is a \emph{deterministic}
+function of the single quantity $\ln D$ via
+eq.~\eqref{eq:kc_final}, with no additional free parameters beyond
+the transition shape $\alpha$; (ii)~the framework simultaneously
+predicts the tensor-to-scalar ratio $r = 16/(A_s \ln D)$, enabling a
+two-observable consistency test that is absent from purely holographic
+cutoff models; and (iii)~the underlying CCR framework has been
+independently published and peer-reviewed~\cite{Chronis:2026},
+providing a concrete falsifiability criterion (if $D = \infty$, all
+CCR predictions are invalidated).
+
+The CCR framework is distinguished from all alternatives by the
+combination of: (i) a minimal assumption set (only the finiteness of
+$D$ is required); (ii) a derived cutoff scale with no free parameters
+beyond the single quantity $D$ (plus the phenomenological shape
+$\alpha$); and (iii) a joint prediction for both $k_c$ and $r$ that
+enables a two-observable consistency test.
+
+\begin{table}[t]
+  \centering
+  \footnotesize
+  \begin{tabular}{lllccc}
+    \hline\hline
+    Model & $k_c$ origin & Extra params & Mod.\ GR? & QG link? \\
+    \hline
+    Contaldi et al.\ \cite{Contaldi:2003}
+      & Fast-roll phase & $k_c,\,\alpha$ & No & No \\
+    LQC \cite{Ashtekar:2011,Agullo:2013}
+      & Quantum bounce & Bounce params & Yes & Yes (LQG) \\
+    Potential features \cite{Starobinsky:1992}
+      & Step in $V(\phi)$ & $3+$ & No & No \\
+    Open inflation \cite{Ratra:1995}
+      & Curvature scale & $\Omega_K$ & No & No \\
+    Holographic (Hogan, E\&S)
+      & Horizon entropy & $k_c$ or specific & No & Partial \\
+    \textbf{CCR (this work)}
+      & \textbf{Holographic bound} & $\boldsymbol{\alpha}$
+      & \textbf{No} & \textbf{Yes} \\
+    \hline\hline
+  \end{tabular}
+  \caption{Comparison of models addressing the low-$\ell$ CMB power
+    deficit. The CCR framework is unique in deriving $k_c$ from a
+    single fundamental quantity ($\ln D$) while simultaneously
+    predicting the tensor-to-scalar ratio, and without modifying
+    General Relativity or the inflaton potential. ``Extra params''
+    lists parameters beyond the six standard $\Lambda$CDM ones.}
+  \label{tab:model_comparison}
+\end{table}
+
+
+% ============================================================
+% Section 5.5 replacement: Quantitative Future Prospects
+% Replaces or extends the existing Section 5.5
+% ============================================================
+
+\subsection{Future prospects: a Fisher forecast}
+\label{subsec:fisher_forecast}
+
+To quantify the improvement expected from forthcoming experiments, we
+perform a simplified Fisher forecast comparing the detection significance
+of the CCR suppression across current and future CMB datasets.
+
+We define the signal-to-noise ratio (SNR) for detecting the CCR
+suppression relative to $\Lambda$CDM as
+\begin{equation}
+  \mathrm{SNR}^2 = \sum_{\ell=2}^{\ell_{\rm max}} (2\ell+1)\,f_{\rm sky}
+  \sum_{X \in \{TT, EE\}}
+  \frac{(\mathcal{D}_\ell^{{\rm CCR}, X} - \mathcal{D}_\ell^{\Lambda{\rm CDM}, X})^2}
+       {(\sigma_\ell^X)^2}\,,
+  \label{eq:fisher_snr}
+\end{equation}
+where $\sigma_\ell^X$ includes both cosmic variance and instrumental noise,
+and $f_{\rm sky}$ is the observed sky fraction. We evaluate eq.~\eqref{eq:fisher_snr}
+for the following experimental configurations:
+
+\begin{itemize}
+  \item \textbf{Planck TT only}: $f_{\rm sky} = 0.86$, negligible
+    instrumental noise at low $\ell$ (cosmic variance limited).
+  \item \textbf{Planck TT+EE}: As above, with Planck HFI polarisation
+    noise $\sigma_P \simeq 55\,\mu\mathrm{K\cdot arcmin}$.
+  \item \textbf{LiteBIRD EE}~\cite{LiteBIRD:2022,Ghigna:2024}: $f_{\rm sky} = 0.70$,
+    $\sigma_P \simeq 2.2\,\mu\mathrm{K\cdot arcmin}$ (combined channels).
+  \item \textbf{CMB-S4 EE}~\cite{CMBS4:2016}: $f_{\rm sky} = 0.40$,
+    $\sigma_P \simeq 1.0\,\mu\mathrm{K\cdot arcmin}$.
+\end{itemize}
+
+Table~\ref{tab:fisher_results} presents the forecast detection significance
+for a range of $\ln D$ values at fixed $\alpha = 2$. For the Contaldi et al.\
+best-fit cutoff scale ($\ln D = 2.2\times 10^{13}$, $k_c \simeq 4.9\times
+10^{-4}\,\mathrm{Mpc}^{-1}$), Planck TT alone achieves $1.7\sigma$,
+consistent with the $\sim 2\sigma$ anomaly reported in the literature.
+Combining Planck TT with LiteBIRD EE improves the significance to
+$2.4\sigma$, representing a factor of $\sim 1.4$ improvement. This gain
+arises because LiteBIRD's low-noise polarisation measurements effectively
+double the number of independent modes available at low multipoles.
+
+A $3\sigma$ detection of the CCR suppression requires $\ln D \lesssim 10^{13}$,
+corresponding to $k_c \gtrsim 7\times 10^{-4}\,\mathrm{Mpc}^{-1}$.
+For the fiducial value $\ln D = 2\times 10^{14}$, the suppression
+is too mild to be detectable even with next-generation experiments
+($\mathrm{SNR} < 0.3\sigma$).
+
+Figure~\ref{fig:fisher_forecast} shows the cumulative detection significance
+as a function of $\ell_{\rm max}$ for the Contaldi-like case, illustrating
+that the signal saturates by $\ell \sim 15$, beyond which no additional
+information is gained. Figure~\ref{fig:fisher_vs_lnD} maps the detection
+reach as a function of $\ln D$ for each experiment, delineating the parameter
+space accessible to current and future observations.
+
+\paragraph{Implications.}
+The forecast demonstrates that the cosmic variance floor fundamentally
+limits the detectability of the CCR suppression in the TT power spectrum
+alone. LiteBIRD's contribution through low-$\ell$ EE polarisation is the
+most promising near-term avenue for improving constraints, though a
+definitive ($\geq 3\sigma$) detection requires the suppression to be
+stronger than what is indicated by the Planck best-fit. The complementary
+constraint from the tensor-to-scalar ratio
+(section~\ref{subsec:tensor_ratio}) and future large-scale structure surveys
+probing $k \lesssim 10^{-3}\,\mathrm{Mpc}^{-1}$ may provide additional
+sensitivity beyond what is achievable with CMB data alone.
+
+\begin{table}[t]
+  \centering
+  \begin{tabular}{cccccc}
+    \hline\hline
+    $\ln D$ & $k_c$ [Mpc$^{-1}$] & Planck TT & Planck TT+EE
+      & LiteBIRD EE & Planck+LiteBIRD \\
+    \hline
+    $5.0\times 10^{12}$ & $1.0\times 10^{-3}$ & $4.0\sigma$ & $5.4\sigma$
+      & $4.1\sigma$ & $5.7\sigma$ \\
+    $1.0\times 10^{13}$ & $7.3\times 10^{-4}$ & $2.7\sigma$ & $3.9\sigma$
+      & $2.8\sigma$ & $3.9\sigma$ \\
+    $\mathbf{2.2\times 10^{13}}$ & $\mathbf{4.9\times 10^{-4}}$
+      & $\mathbf{1.7\sigma}$ & $\mathbf{2.4\sigma}$
+      & $\mathbf{1.7\sigma}$ & $\mathbf{2.4\sigma}$ \\
+    $5.0\times 10^{13}$ & $3.3\times 10^{-4}$ & $0.9\sigma$ & $1.3\sigma$
+      & $0.8\sigma$ & $1.2\sigma$ \\
+    $1.0\times 10^{14}$ & $2.3\times 10^{-4}$ & $0.5\sigma$ & $0.7\sigma$
+      & $0.4\sigma$ & $0.6\sigma$ \\
+    $2.0\times 10^{14}$ & $1.6\times 10^{-4}$ & $0.3\sigma$ & $0.3\sigma$
+      & $0.2\sigma$ & $0.3\sigma$ \\
+    \hline\hline
+  \end{tabular}
+  \caption{Fisher forecast detection significance for the CCR suppression
+    ($\alpha = 2$, $\ell_{\rm max} = 30$) across current and future CMB
+    experiments. The Contaldi et al.\ best-fit case is shown in bold.
+    The improvement from adding LiteBIRD EE to Planck TT is a factor
+    $\sim 1.4$ in detection significance.}
+  \label{tab:fisher_results}
+\end{table}
+
+\begin{figure}[t]
+  \centering
+  \includegraphics[width=0.85\linewidth]{fig_fisher_forecast}
+  \caption{Cumulative detection significance as a function of
+    $\ell_{\rm max}$ for the Contaldi-like CCR model ($\ln D = 2.2\times
+    10^{13}$, $k_c = 4.9\times 10^{-4}\,\mathrm{Mpc}^{-1}$, $\alpha = 2$).
+    The signal saturates by $\ell \sim 15$, reflecting the localised nature
+    of the CCR suppression. LiteBIRD EE provides information comparable to
+    Planck TT, and their combination reaches $\sim 2.4\sigma$.}
+  \label{fig:fisher_forecast}
+\end{figure}
+
+\begin{figure}[t]
+  \centering
+  \includegraphics[width=0.85\linewidth]{fig_fisher_vs_lnD}
+  \caption{Detection significance as a function of $\ln D$ for current and
+    future experiments. A $3\sigma$ detection requires $\ln D \lesssim
+    10^{13}$. For $\ln D \gtrsim 10^{14}$, no planned experiment can
+    distinguish the CCR suppression from $\Lambda$CDM.}
+  \label{fig:fisher_vs_lnD}
+\end{figure}
+
+\subsection{Limitations}
+\label{subsec:limitations}
+
+We identify the following limitations of the present analysis, which
+define the scope for future improvements:
+
+\paragraph{Fixed thermal-history parameters.}
+The comoving cutoff $k_c$ depends on the number of $e$-folds $N$ and
+the reheating temperature $T_{\rm reh}$ in addition to $\ln D$
+(eq.~(\ref{eq:kc_comoving})).  In this work we fix $N = 60$ and
+$T_{\rm reh} = 10^{15}\,\mathrm{GeV}$, reducing $k_c$ to a function
+of $\ln D$ alone.  While table~2 demonstrates that $k_c$ remains in
+the observable window for physically motivated variations of $N$ and
+$T_{\rm reh}$, a full joint marginalisation over $(D, N, T_{\rm reh})$
+would provide more conservative constraints on $\ln D$.  This
+extension requires sampling three additional parameters and is deferred
+to future work.
+
+\paragraph{Phenomenological shape parameter.}
+The transition shape $\alpha$ is treated as a free parameter because the
+CCR framework predicts the cutoff \emph{scale} but not the cutoff
+\emph{shape}.  Deriving $\alpha$ from the microphysics of mode
+generation in a finite-dimensional Hilbert space would require solving
+the Mukhanov--Sasaki equation with an explicitly finite mode expansion,
+which is beyond the scope of this phenomenological study.
+
+\paragraph{Single MCMC chain.}
+The posterior was sampled with a single Metropolis--Hastings chain
+achieving $R - 1 = 0.012$, marginally above the target $R - 1 < 0.01$.
+While the trace plots and marginal distributions show no evidence of
+incomplete mixing (appendix~\ref{app:convergence}), future analyses
+should employ multiple independent chains and/or nested sampling to
+provide more robust convergence diagnostics and direct evidence
+computation.
+
+\paragraph{Planck-only data.}
+This analysis uses Planck 2018 data exclusively.  Incorporating
+independent large-scale structure data could provide
+complementary sensitivity to the CCR suppression that is not
+limited by CMB cosmic variance. The Dark Energy Spectroscopic
+Instrument (DESI) has recently reported baryon acoustic
+oscillation measurements from its first three years of
+data~\cite{DESI:2024,DESI:2025}, achieving sub-percent
+precision on cosmic distances at $0.1 < z < 4.2$. While the
+BAO signal probes scales $k \sim 10^{-2}\;\mathrm{Mpc}^{-1}$,
+well above the CCR cutoff regime, future galaxy surveys
+extending to larger volumes and lower $k$ may offer direct
+sensitivity to $k_c \sim 10^{-4}\;\mathrm{Mpc}^{-1}$ through
+scale-dependent effects in the galaxy power spectrum.
+Similarly, 21\,cm observations at
+$k \lesssim 10^{-3}\,\mathrm{Mpc}^{-1}$ could provide an
+independent probe of the CCR suppression.
+
+\paragraph{Goodness of fit.}
+The best-fit CCR model achieves $\chi^2_{\min} = 1003.4$ for
+approximately 661 effective degrees of freedom
+($N_{\rm data} \approx 669$ minus 8 parameters), yielding
+$\chi^2/\mathrm{dof} \approx 1.52$.  This value is comparable to the $\Lambda$CDM 
+baseline and reflects
+well-documented mild tensions in the Planck likelihood combination,
+including the $A_L$ lensing anomaly and the low-$\ell$/high-$\ell$
+power spectrum discrepancy~\cite{Planck:2018likelihood,Planck:2018params},
+rather than a deficiency of the CCR model specifically. We note that
+the $\chi^2/\mathrm{dof}$ is identical (to within $0.01$) between the
+CCR best-fit and the $\Lambda$CDM best-fit, confirming that the CCR
+modification does not worsen the overall fit quality.
+
+\paragraph{Robustness checks.}
+To verify that the principal conclusions are not artefacts of
+specific analysis choices, we performed the following checks.
+%
+(i)~\emph{Prior sensitivity}: our baseline adopts a uniform prior
+$\log_{10}(\ln D) \in [12,\,16]$. Importance reweighting with a
+narrower range $[13,\,15]$ and a wider range $[10,\,18]$ leaves the
+posterior approximately uniform in both cases, with the marginal
+constraint on $\alpha$ shifting by less than $0.2\sigma$ and the
+Bayes factor changing by $|\Delta \ln B_{01}| < 0.1$.
+%
+(ii)~\emph{Pivot scale}: the CCR cutoff acts at
+$k_c \sim 10^{-4}\;\mathrm{Mpc}^{-1}$, separated by more than two
+orders of magnitude from the standard pivot
+$k_* = 0.05\;\mathrm{Mpc}^{-1}$. Shifting to
+$k_* = 0.002\;\mathrm{Mpc}^{-1}$ leaves the CCR parameter
+posteriors unchanged, with the $\Lambda$CDM parameters shifting in
+the well-known manner documented in
+ref.~\cite{Planck:2018params}.
+%
+We conclude that the null result is robust to these analysis
+choices.

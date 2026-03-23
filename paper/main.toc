@@ -1,0 +1,64 @@
+\contentsline {section}{\numberline {1}Introduction}{2}{section.1}%
+\contentsline {paragraph}{Scope and contribution.}{3}{section*.2}%
+\contentsline {section}{\numberline {2}Theoretical Framework: From Finite Hilbert Space to an IR Cutoff}{4}{section.2}%
+\contentsline {subsection}{\numberline {2.1}The de~Sitter Horizon as a Natural IR Cutoff}{4}{subsection.2.1}%
+\contentsline {subsection}{\numberline {2.2}Connecting $H_{\rm inf}$ to the Hilbert-Space Dimension $D$}{6}{subsection.2.2}%
+\contentsline {paragraph}{Physical interpretation.}{6}{section*.3}%
+\contentsline {paragraph}{Saturation assumption.}{6}{section*.4}%
+\contentsline {subsection}{\numberline {2.3}From Physical to Comoving Wavenumber}{6}{subsection.2.3}%
+\contentsline {paragraph}{The scale factor $a_i$.}{7}{section*.5}%
+\contentsline {paragraph}{The key equation.}{7}{section*.6}%
+\contentsline {subsection}{\numberline {2.4}The Just-Enough-Inflation Condition}{7}{subsection.2.4}%
+\contentsline {paragraph}{Quantitative assessment.}{8}{section*.7}%
+\contentsline {paragraph}{Degeneracy and sensitivity to thermal-history parameters.}{8}{section*.8}%
+\contentsline {subsection}{\numberline {2.5}The CCR-Modified Primordial Power Spectrum}{9}{subsection.2.5}%
+\contentsline {paragraph}{Limiting behaviour.}{9}{section*.9}%
+\contentsline {paragraph}{The shape parameter $\alpha $.}{10}{section*.10}%
+\contentsline {paragraph}{Remark on the parameter count.}{10}{section*.11}%
+\contentsline {subsection}{\numberline {2.6}Comparison with Contaldi et al.\ (2003)}{11}{subsection.2.6}%
+\contentsline {subsection}{\numberline {2.7}Prediction for the Tensor-to-Scalar Ratio}{11}{subsection.2.7}%
+\contentsline {paragraph}{Physical interpretation.}{12}{section*.12}%
+\contentsline {paragraph}{Complementarity with the IR cutoff.}{12}{section*.13}%
+\contentsline {section}{\numberline {3}Methodology}{13}{section.3}%
+\contentsline {subsection}{\numberline {3.1}Modified primordial spectrum implementation}{13}{subsection.3.1}%
+\contentsline {subsection}{\numberline {3.2}Planck 2018 likelihoods}{13}{subsection.3.2}%
+\contentsline {subsection}{\numberline {3.3}Parameter space and priors}{14}{subsection.3.3}%
+\contentsline {subsection}{\numberline {3.4}MCMC sampling and convergence}{14}{subsection.3.4}%
+\contentsline {subsection}{\numberline {3.5}Model comparison}{14}{subsection.3.5}%
+\contentsline {section}{\numberline {4}Results}{15}{section.4}%
+\contentsline {subsection}{\numberline {4.1}Posterior constraints on the CCR parameters}{15}{subsection.4.1}%
+\contentsline {subsection}{\numberline {4.2}Model comparison}{15}{subsection.4.2}%
+\contentsline {subsection}{\numberline {4.3}Decoupling from standard cosmological parameters}{17}{subsection.4.3}%
+\contentsline {subsection}{\numberline {4.4}$\Lambda $CDM recovery}{18}{subsection.4.4}%
+\contentsline {subsection}{\numberline {4.5}Comparison with Planck low-$\ell $ data}{18}{subsection.4.5}%
+\contentsline {subsection}{\numberline {4.6}Prior sensitivity analysis}{18}{subsection.4.6}%
+\contentsline {section}{\numberline {5}Discussion and Conclusions}{21}{section.5}%
+\contentsline {subsection}{\numberline {5.1}Summary of results}{21}{subsection.5.1}%
+\contentsline {subsection}{\numberline {5.2}Interpretation}{21}{subsection.5.2}%
+\contentsline {subsection}{\numberline {5.3}Theoretical significance}{22}{subsection.5.3}%
+\contentsline {subsection}{\numberline {5.4}Comparison with alternative approaches}{22}{subsection.5.4}%
+\contentsline {paragraph}{Early holographic IR cutoff proposals.}{23}{section*.14}%
+\contentsline {subsection}{\numberline {5.5}Future prospects: a Fisher forecast}{24}{subsection.5.5}%
+\contentsline {paragraph}{Implications.}{25}{section*.15}%
+\contentsline {subsection}{\numberline {5.6}Limitations}{25}{subsection.5.6}%
+\contentsline {paragraph}{Fixed thermal-history parameters.}{25}{section*.16}%
+\contentsline {paragraph}{Phenomenological shape parameter.}{25}{section*.17}%
+\contentsline {paragraph}{Single MCMC chain.}{26}{section*.18}%
+\contentsline {paragraph}{Planck-only data.}{27}{section*.19}%
+\contentsline {paragraph}{Goodness of fit.}{27}{section*.20}%
+\contentsline {paragraph}{Robustness checks.}{27}{section*.21}%
+\contentsline {section}{\numberline {A}Derivation of the comoving IR cutoff}{29}{appendix.A}%
+\contentsline {paragraph}{Step 1: Gibbons--Hawking entropy.}{29}{section*.24}%
+\contentsline {paragraph}{Step 2: Hilbert space dimension.}{29}{section*.25}%
+\contentsline {paragraph}{Step 3: Physical IR cutoff.}{30}{section*.26}%
+\contentsline {paragraph}{Step 4: Scale factor at the onset of inflation.}{30}{section*.27}%
+\contentsline {paragraph}{Step 5: Comoving cutoff.}{30}{section*.28}%
+\contentsline {paragraph}{Step 6: Tensor-to-scalar ratio.}{31}{section*.29}%
+\contentsline {section}{\numberline {B}MCMC convergence diagnostics}{31}{appendix.B}%
+\contentsline {paragraph}{Chain statistics.}{31}{section*.30}%
+\contentsline {paragraph}{Trace plots.}{31}{section*.31}%
+\contentsline {paragraph}{Gelman--Rubin diagnostic.}{31}{section*.32}%
+\contentsline {paragraph}{$\chi ^2$ trace.}{31}{section*.33}%
+\contentsline {section}{\numberline {C}Numerical validation}{34}{appendix.C}%
+\contentsline {paragraph}{$\Lambda $CDM recovery.}{34}{section*.34}%
+\contentsline {paragraph}{$k$-grid convergence.}{34}{section*.35}%

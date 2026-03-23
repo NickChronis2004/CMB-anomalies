@@ -1,0 +1,157 @@
+# ============================================================
+# CCR-CMB MCMC Configuration for Cobaya
+# Paper A: CCR-Motivated IR Cutoff and CMB Power Spectrum Suppression
+# ============================================================
+#
+# BEFORE RUNNING:
+#   1. Install Planck data:  cobaya-install planck_2018_lowl.TT planck_2018_lowl.EE planck_2018_highl_plik.TTTEEE_lite -p /path/to/packages
+#   2. Set COBAYA_PACKAGES_PATH=/path/to/packages
+#   3. Run:  cobaya-run ccr_cobaya.yaml
+#
+# Alternatively, use the standalone Python script: run_ccr_mcmc.py
+
+theory:
+  ccr_camb:
+    # Custom theory class — see ccr_theory_cobaya.py
+    python_path: .
+    class: ccr_theory_cobaya.CCR_CAMB
+    stop_at_error: True
+    extra_args:
+      lmax: 2500
+      lens_potential_accuracy: 1
+      N_efolds: 60
+      Treh_GeV: 1.0e+15
+
+params:
+  # === CCR parameters (NEW) ===
+  log_lnD:
+    prior:
+      min: 12.0    # ln D = 10^12
+      max: 16.0    # ln D = 10^16
+    ref:
+      dist: norm
+      loc: 14.3    # ~ ln D = 2e14
+      scale: 0.5
+    proposal: 0.3
+    latex: \log_{10}(\ln D)
+
+  alpha_ccr:
+    prior:
+      min: 1.0
+      max: 6.0
+    ref:
+      dist: norm
+      loc: 2.0
+      scale: 1.0
+    proposal: 0.5
+    latex: \alpha
+
+  # === Standard LCDM parameters ===
+  ombh2:
+    prior:
+      min: 0.005
+      max: 0.1
+    ref:
+      dist: norm
+      loc: 0.02237
+      scale: 0.00015
+    proposal: 0.0001
+    latex: \Omega_b h^2
+
+  omch2:
+    prior:
+      min: 0.001
+      max: 0.99
+    ref:
+      dist: norm
+      loc: 0.1200
+      scale: 0.001
+    proposal: 0.0008
+    latex: \Omega_c h^2
+
+  H0:
+    prior:
+      min: 40
+      max: 100
+    ref:
+      dist: norm
+      loc: 67.36
+      scale: 0.5
+    proposal: 0.4
+    latex: H_0
+
+  tau:
+    prior:
+      dist: norm
+      loc: 0.0544
+      scale: 0.0073
+    ref:
+      dist: norm
+      loc: 0.0544
+      scale: 0.005
+    proposal: 0.003
+    latex: \tau_{\rm reio}
+
+  As:
+    prior:
+      min: 5.0e-10
+      max: 5.0e-9
+    ref:
+      dist: norm
+      loc: 2.1e-9
+      scale: 3.0e-11
+    proposal: 2.0e-11
+    latex: A_s
+
+  ns:
+    prior:
+      min: 0.8
+      max: 1.2
+    ref:
+      dist: norm
+      loc: 0.9649
+      scale: 0.004
+    proposal: 0.003
+    latex: n_s
+
+  # === Derived parameters ===
+  kc:
+    derived: True
+    latex: k_c\,[\mathrm{Mpc}^{-1}]
+
+  lnD:
+    derived: True
+    latex: \ln D
+
+  Hinf_GeV:
+    derived: True
+    latex: H_{\rm inf}\,[\mathrm{GeV}]
+
+likelihood:
+  # Low-ell TT (Commander)
+  planck_2018_lowl.TT:
+    # Uses ell = 2-29, most sensitive to our CCR signal
+
+  # Low-ell EE (SimAll)
+  planck_2018_lowl.EE:
+    # Constrains tau
+
+  # High-ell TT+TE+EE (Plik lite)
+  planck_2018_highl_plik.TTTEEE_lite:
+    # ell = 30-2508, constrains LCDM params
+    # Using 'lite' version: nuisance-marginalized, much faster
+
+sampler:
+  mcmc:
+    # Metropolis-Hastings with fast-slow decomposition
+    burn_in: 300
+    max_tries: 10000
+    Rminus1_stop: 0.01      # Gelman-Rubin convergence
+    Rminus1_cl_stop: 0.2
+    covmat: auto
+    oversample_power: 0.4
+    drag: True
+    proposal_scale: 2.4
+    learn_proposal: True
+
+output: chains/ccr_mcmc

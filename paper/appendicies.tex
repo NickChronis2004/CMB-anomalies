@@ -1,0 +1,249 @@
+% ============================================================
+% APPENDICES
+% Place after References or before, depending on JCAP style
+% ============================================================
+
+\appendix
+
+% ============================================================
+% APPENDIX A — Derivation Details
+% ============================================================
+\section{Derivation of the comoving IR cutoff}
+\label{app:derivation}
+
+This appendix presents the complete derivation of eq.~(\ref{eq:kc_comoving})
+in explicit detail.
+
+\paragraph{Step 1: Gibbons--Hawking entropy.}
+The de~Sitter horizon has area $A = 4\pi R_{\rm dS}^2 = 4\pi H_{\rm inf}^{-2}$.
+The Gibbons--Hawking entropy~\cite{Gibbons:1977} is
+\begin{equation}
+  S_{\rm dS} = \frac{k_B\,A}{4\,l_P^2}
+  = \frac{k_B\,\pi}{H_{\rm inf}^2\,l_P^2}\,.
+  \label{eq:app_SdS}
+\end{equation}
+
+\paragraph{Step 2: Hilbert space dimension.}
+The CCR framework~\cite{Chronis:2026} identifies $S_{\rm dS}/k_B = \ln D$,
+giving
+\begin{equation}
+  \ln D = \frac{\pi}{H_{\rm inf}^2\,l_P^2}
+  \qquad\Longrightarrow\qquad
+  H_{\rm inf} = \frac{1}{l_P}\sqrt{\frac{\pi}{\ln D}}\,.
+  \label{eq:app_Hinf}
+\end{equation}
+
+\noindent\textit{Saturation of the holographic bound.}
+The use of equality rather than inequality in eq.~(\ref{eq:app_Hinf})
+--- i.e.\ $\ln D = S_{\rm dS}/k_B$ rather than $\ln D \leq S_{\rm dS}/k_B$
+--- corresponds to the assumption that the de~Sitter horizon entropy
+saturates the Bekenstein--Hawking bound, as is standard in de~Sitter
+thermodynamics~\cite{Gibbons:1977}.  This is the gravitational
+analogue of a black hole whose entropy equals $A/(4\,l_P^2)$: the
+horizon is a maximum-entropy surface for the enclosed degrees of
+freedom.  If the bound is not saturated ($\ln D < S_{\rm dS}/k_B$),
+the effective Hilbert space dimension is smaller, $H_{\rm inf}$ is
+larger, and the infrared cutoff $k_c$ shifts to larger values ---
+producing \emph{stronger} suppression than the fiducial case.  The
+saturation assumption therefore yields the most conservative (i.e.\
+weakest) CCR prediction, and any sub-saturation would only strengthen
+the observational signature.
+
+For the fiducial value $\ln D = 2 \times 10^{14}$:
+\begin{equation}
+  H_{\rm inf} = \frac{\sqrt{\pi/(2\times 10^{14})}}{1.616\times 10^{-35}\;\mathrm{m}}
+  = \frac{1.253\times 10^{-7}}{1.616\times 10^{-35}\;\mathrm{m}}
+  \simeq 7.75\times 10^{27}\;\mathrm{m}^{-1} \;.
+\end{equation}
+Converting to GeV using $\hbar c = 1.973\times 10^{-16}\;\mathrm{GeV\cdot m}$:
+\begin{equation}
+  H_{\rm inf} = 7.75\times 10^{27}\;\mathrm{m}^{-1}
+  \times 1.973\times 10^{-16}\;\mathrm{GeV\cdot m}
+  \simeq 1.53\times 10^{12}\;\mathrm{GeV} \;,
+\end{equation}
+consistent with table~1.
+
+\paragraph{Step 3: Physical IR cutoff.}
+The horizon-crossing condition gives the physical cutoff:
+\begin{equation}
+  k_{c,\,\rm phys} = H_{\rm inf} = \frac{1}{l_P}\sqrt{\frac{\pi}{\ln D}}\,.
+  \label{eq:app_kc_phys}
+\end{equation}
+
+\paragraph{Step 4: Scale factor at the onset of inflation.}
+Entropy conservation after reheating gives (normalising $a_0 = 1$):
+\begin{equation}
+  a_{\rm reh} = \left(\frac{g_{*S,0}}{g_{*S,\rm reh}}\right)^{1/3}
+  \frac{T_0}{T_{\rm reh}}\,,
+  \qquad
+  a_i = a_{\rm reh}\,e^{-N}\,.
+\end{equation}
+Numerically, with $g_{*S,0} = 3.938$, $g_{*S,\rm reh} = 106.75$,
+$T_0 = 2.7255\,\mathrm{K}$, $T_{\rm reh} = 10^{15}\,\mathrm{GeV}
+= 1.160\times 10^{28}\,\mathrm{K}$, and $N = 60$:
+\begin{align}
+  \left(\frac{g_{*S,0}}{g_{*S,\rm reh}}\right)^{1/3}
+  &= \left(\frac{3.938}{106.75}\right)^{1/3} = 0.3326\,, \\
+  a_{\rm reh} &= 0.3326 \times \frac{2.7255}{1.160\times 10^{28}}
+  = 7.813\times 10^{-29}\,, \\
+  a_i &= 7.813\times 10^{-29}\times e^{-60}
+  = 7.813\times 10^{-29}\times 8.757\times 10^{-27}
+  = 6.842\times 10^{-55}\,.
+\end{align}
+
+\paragraph{Step 5: Comoving cutoff.}
+\begin{equation}
+  k_c = a_i\,k_{c,\,\rm phys}
+  = a_i \times \frac{1}{l_P}\sqrt{\frac{\pi}{\ln D}}\,.
+\end{equation}
+To obtain $k_c$ in $\mathrm{Mpc}^{-1}$, we multiply by
+$1\,\mathrm{Mpc} = 3.086\times 10^{22}\,\mathrm{m}$:
+\begin{align}
+  k_c &= 6.842\times 10^{-55} \times
+  \frac{\sqrt{\pi/(2\times 10^{14})}}{1.616\times 10^{-35}\,\mathrm{m}}
+  \times 3.086\times 10^{22}\,\mathrm{m}\,\mathrm{Mpc}^{-1} \nonumber\\
+  &= 6.842\times 10^{-55} \times 2.455\times 10^{27}\,\mathrm{m}^{-1}
+  \times 3.086\times 10^{22}\,\mathrm{m}\,\mathrm{Mpc}^{-1} \nonumber\\
+  &\simeq 1.64\times 10^{-4}\,\mathrm{Mpc}^{-1}\,.
+\end{align}
+This confirms eq.~(12) in the main text.
+
+\paragraph{Step 6: Tensor-to-scalar ratio.}
+From $H_{\rm inf} = M_{\rm Pl}\sqrt{8\pi^2/\ln D}$ (where
+$M_{\rm Pl} = m_{\rm Pl}/\sqrt{8\pi}$ is the reduced Planck mass):
+\begin{equation}
+  P_T = \frac{2}{\pi^2}\frac{H_{\rm inf}^2}{M_{\rm Pl}^2}
+  = \frac{2}{\pi^2}\times\frac{8\pi^2}{\ln D}
+  = \frac{16}{\ln D}\,,
+\end{equation}
+giving
+\begin{equation}
+  r = \frac{P_T}{A_s} = \frac{16}{A_s\,\ln D}\,.
+\end{equation}
+For $A_s = 2.1\times 10^{-9}$ and $\ln D = 2\times 10^{14}$:
+$r = 16/(2.1\times 10^{-9}\times 2\times 10^{14}) = 3.81\times 10^{-5}$,
+confirming eq.~(17).
+
+
+% ============================================================
+% APPENDIX B — MCMC Convergence Diagnostics
+% ============================================================
+\section{MCMC convergence diagnostics}
+\label{app:convergence}
+
+We present diagnostic tests for the MCMC analysis described in
+section~\ref{sec:methodology}.
+
+\paragraph{Chain statistics.}
+The single Metropolis--Hastings chain comprises 11\,681 samples with a
+total weight of 41\,849 (mean multiplicity 3.6), corresponding to an
+acceptance rate of 28\% and an effective sample size
+$N_{\rm eff} \simeq 5\,650$ (computed as
+$N_{\rm eff} = (\sum w_i)^2/\sum w_i^2$). The final Gelman--Rubin
+statistic, computed via the split-chain method, is
+$R - 1 = 0.012$.
+
+\paragraph{Trace plots.}
+Figure~\ref{fig:trace_plots} shows the trace plots and running weighted
+means for the five key parameters: $\log_{10}(\ln D)$, $\alpha$, $H_0$,
+$\tau$, and $n_s$. All running means stabilise within the first
+$\sim 1\,000$ samples and show no systematic drift thereafter, indicating
+adequate mixing. The CCR parameters $\log_{10}(\ln D)$ and $\alpha$
+exhibit broader excursions than the $\Lambda$CDM parameters, reflecting
+the flat posterior (the chain explores the full prior range uniformly).
+
+\paragraph{Gelman--Rubin diagnostic.}
+Figure~\ref{fig:gelman_rubin} shows the split-chain $R - 1$ statistic
+as a function of sample number. All parameters fluctuate near or below
+the $R - 1 = 0.01$ target for the majority of the chain, with the
+final value of $R - 1 = 0.012$ reflecting transient excursions rather
+than systematic non-convergence.
+
+\paragraph{$\chi^2$ trace.}
+Figure~\ref{fig:chi2_trace} shows the $\chi^2$ trace, confirming that
+the chain does not become trapped in local minima. The running mean
+stabilises at $\langle\chi^2\rangle = 1008.7$ with minimum
+$\chi^2_{\min} = 1002.7$.
+
+\begin{figure}[p]
+  \centering
+  \includegraphics[width=\linewidth]{fig_trace_plots}
+  \caption{Trace plots and running weighted means for the five key
+    parameters. The CCR parameters explore the full prior range
+    uniformly, while the $\Lambda$CDM parameters converge rapidly.}
+  \label{fig:trace_plots}
+\end{figure}
+
+\begin{figure}[p]
+  \centering
+  \includegraphics[width=\linewidth]{fig_gelman_rubin}
+  \caption{Split-chain Gelman--Rubin diagnostic $R - 1$ as a function
+    of sample number. The dashed line marks the $R - 1 = 0.01$ target.
+    All parameters fluctuate near or below $R - 1 = 0.01$ for the
+    majority of the chain, with a final value of $R - 1 = 0.012$.}
+  \label{fig:gelman_rubin}
+\end{figure}
+
+\begin{figure}[p]
+  \centering
+  \includegraphics[width=\linewidth]{fig_chi2_trace}
+  \caption{$\chi^2$ trace plot. The running mean (black) stabilises at
+    $\langle\chi^2\rangle = 1008.7$; the minimum is
+    $\chi^2_{\min} = 1002.7$.}
+  \label{fig:chi2_trace}
+\end{figure}
+
+
+% ============================================================
+% APPENDIX C — Numerical Validation
+% ============================================================
+\section{Numerical validation}
+\label{app:validation}
+
+\paragraph{$\Lambda$CDM recovery.}
+Figure~\ref{fig:lcdm_recovery} (upper panel) shows the fractional
+difference $|\Delta C_\ell^{TT}/C_\ell^{TT}|$ between the
+CCR-modified and standard $\Lambda$CDM spectra for increasing values
+of $\ln D$. The results confirm the expected limiting behaviour:
+
+\begin{center}
+\begin{tabular}{ccc}
+  \hline\hline
+  $\ln D$ & $k_c$ [Mpc$^{-1}$] & $\max|\Delta C_\ell^{TT}/C_\ell^{TT}|$ \\
+  \hline
+  $10^{14}$ & $2.3\times 10^{-4}$ & $2.7\times 10^{-1}$ \\
+  $10^{15}$ & $7.3\times 10^{-5}$ & $1.6\times 10^{-2}$ \\
+  $10^{16}$ & $2.3\times 10^{-5}$ & $2.2\times 10^{-4}$ \\
+  $10^{17}$ & $7.3\times 10^{-6}$ & $1.8\times 10^{-6}$ \\
+  $10^{18}$ & $2.3\times 10^{-6}$ & $2.8\times 10^{-11}$ \\
+  \hline\hline
+\end{tabular}
+\end{center}
+
+\noindent
+For $\ln D = 10^{16}$ (the upper edge of our prior range), the maximum
+fractional deviation is $2.2\times 10^{-4}$, confirming that the
+$\Lambda$CDM limit is recovered to high precision. For $\ln D \geq 10^{17}$,
+the deviation drops below $10^{-5}$ across all multipoles.
+
+\paragraph{$k$-grid convergence.}
+Figure~\ref{fig:lcdm_recovery} (lower panel) compares the TT power
+spectrum computed with $n_k = 500$, 1000, and 1500 $k$-grid points
+against a reference computation with $n_k = 2000$, for
+$\ln D = 2\times 10^{14}$ and $\alpha = 2$. The fractional differences
+are below $10^{-5}$ for $n_k \geq 500$, confirming that our fiducial
+choice of $n_k = 1500$ is more than adequate.
+
+\begin{figure}[p]
+  \centering
+  \includegraphics[width=\linewidth]{fig_lcdm_recovery}
+  \caption{\textbf{Upper:} $\Lambda$CDM recovery test. Fractional
+    difference between CCR and $\Lambda$CDM $C_\ell^{TT}$ for
+    increasing $\ln D$. The dashed line marks the
+    $5\times 10^{-5}$ threshold.
+    \textbf{Lower:} $k$-grid convergence test for
+    $\ln D = 2\times 10^{14}$, comparing $n_k = 500$, 1000, 1500
+    against a reference with $n_k = 2000$. All grids agree to better
+    than $10^{-5}$.}
+  \label{fig:lcdm_recovery}
+\end{figure}

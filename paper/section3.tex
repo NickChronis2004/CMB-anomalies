@@ -1,0 +1,130 @@
+% ============================================================
+% SECTION 3 — Methodology
+% ============================================================
+
+\section{Methodology}
+\label{sec:methodology}
+
+We constrain the CCR-modified primordial power spectrum against
+Planck 2018 data using Markov Chain Monte Carlo (MCMC) sampling.
+
+\subsection{Modified primordial spectrum implementation}
+
+The CCR-modified primordial scalar power spectrum, eq.~(\ref{eq:P_CCR}),
+is implemented as an external primordial power spectrum provider within
+the Cobaya sampling framework~\cite{Torrado:2021}. For each point in
+parameter space, we evaluate $\mathcal{P}_{\rm CCR}(k)$ on a
+logarithmically spaced grid of 1500 points over
+$k \in [10^{-6},\,3.2]\;\mathrm{Mpc}^{-1}$, where the comoving cutoff
+$k_c = k_c(D)$ is computed from eq.~(\ref{eq:kc_comoving}) for each
+sampled value of $\ln D$.
+
+The modified spectrum is passed to CAMB~1.6.5~\cite{Lewis:1999} via
+the \texttt{SplinedInitialPower} interface, which performs cubic spline
+interpolation in $\log k$. CAMB then computes the transfer functions
+and angular power spectra $C_\ell^{TT}$, $C_\ell^{TE}$, and
+$C_\ell^{EE}$ up to $\ell_{\max} = 2500$ with lensing potential
+accuracy set to unity. We verify that in the limit $D \to \infty$ (equivalently $k_c \to 0$),
+the standard $\Lambda$CDM power spectrum is recovered to a relative 
+precision of $\lesssim 2 \times 10^{-4}$ across all multipoles.
+
+
+\subsection{Planck 2018 likelihoods}
+
+We employ the following Planck 2018
+likelihoods~\cite{Planck:2018likelihood}:
+\begin{itemize}
+  \item \textbf{Low-$\ell$ TT} ($\ell = 2$--$29$): the Commander
+    component-separation likelihood, which provides the primary
+    sensitivity to the CCR suppression signal.
+  \item \textbf{Low-$\ell$ EE} ($\ell = 2$--$29$): the SimAll
+    likelihood, which constrains the optical depth~$\tau$.
+  \item \textbf{High-$\ell$ TT+TE+EE} ($\ell = 30$--$2508$): the
+    Plik lite nuisance-marginalized likelihood, which constrains the
+    standard $\Lambda$CDM parameters and ensures the CCR modification
+    does not degrade the fit at small angular scales.
+\end{itemize}
+The combination of low-$\ell$ and high-$\ell$ likelihoods is essential:
+the CCR signal manifests exclusively at $\ell \lesssim 30$, while the
+high-$\ell$ data anchor the cosmological parameters.
+
+\subsection{Parameter space and priors}
+
+The full parameter space comprises eight dimensions: six standard
+$\Lambda$CDM parameters and two CCR parameters. The priors are
+summarised in table~\ref{tab:priors}.
+
+\begin{table}[t]
+\centering
+\begin{tabular}{lcc}
+\toprule
+Parameter & Prior & Description \\
+\midrule
+$\log_{10}(\ln D)$ & $\mathcal{U}[12,\,16]$ & Hilbert space dimension \\
+$\alpha$ & $\mathcal{U}[1,\,6]$ & Suppression shape \\
+$\Omega_b h^2$ & $\mathcal{U}[0.005,\,0.1]$ & Baryon density \\
+$\Omega_c h^2$ & $\mathcal{U}[0.001,\,0.99]$ & CDM density \\
+$H_0$ & $\mathcal{U}[40,\,100]$ & Hubble constant \\
+$\tau$ & $\mathcal{N}(0.0544,\,0.0073)$ & Optical depth \\
+$A_s$ & $\mathcal{U}[5 \times 10^{-10},\,5 \times 10^{-9}]$ & Scalar amplitude \\
+$n_s$ & $\mathcal{U}[0.8,\,1.2]$ & Spectral index \\
+\bottomrule
+\end{tabular}
+\caption{Prior distributions for the MCMC analysis.
+  $\mathcal{U}[a,b]$ denotes a uniform prior on $[a,b]$ and
+  $\mathcal{N}(\mu,\sigma)$ a Gaussian prior with mean $\mu$ and
+  standard deviation $\sigma$. The Hilbert space dimension is sampled
+  in $\log_{10}(\ln D)$ to efficiently explore the large dynamic range.
+  We additionally fix $\sum m_\nu = 0.06\;\mathrm{eV}$ and
+  $\Omega_k = 0$.}
+\label{tab:priors}
+\end{table}
+
+The prior on $\log_{10}(\ln D)$ spans four orders of magnitude, from
+$\ln D = 10^{12}$ (strong suppression,
+$k_c \sim 7 \times 10^{-3}\;\mathrm{Mpc}^{-1}$) to $\ln D = 10^{16}$
+(negligible suppression, effectively $\Lambda$CDM). The prior on
+$\alpha$ encompasses the range from gradual ($\alpha = 1$, exponential)
+to sharp ($\alpha = 6$, step-like) suppression profiles.
+
+\subsection{MCMC sampling and convergence}
+
+We sample the posterior distribution using the Metropolis--Hastings
+algorithm as implemented in Cobaya~3.6.1~\cite{Torrado:2021}, with the
+fast-dragging scheme enabled to exploit the hierarchy of evaluation
+speeds. The CCR primordial spectrum evaluation
+($\sim 9 \times 10^3$ evaluations per second) is significantly faster
+than the CAMB transfer function computation ($\sim 5$ evaluations per
+second), allowing the fast parameters ($\log_{10}(\ln D)$, $\alpha$,
+$A_s$, $A_{\rm planck}$) to be oversampled by a factor of four relative
+to the slow cosmological parameters ($\Omega_b h^2$, $\Omega_c h^2$,
+$H_0$, $\tau$, $n_s$).
+
+The proposal covariance matrix is initialised from the Planck 2018 base
+covariance for the $\Lambda$CDM parameters and learned adaptively for
+the CCR parameters during a burn-in phase of 300 accepted steps.
+Convergence is assessed via the Gelman--Rubin statistic $R - 1$, with
+a target of $R - 1 < 0.01$. The final chains achieve $R - 1 = 0.012$
+after approximately 11\,700 accepted samples, with a sustained
+acceptance rate of $29\%$.
+
+\subsection{Model comparison}
+
+To assess whether the CCR modification is statistically justified, we
+employ three complementary criteria:
+\begin{enumerate}
+  \item The \textbf{Savage--Dickey density ratio}~\cite{Dickey:1971},
+    which estimates the Bayes factor by comparing the marginal posterior
+    density at the $\Lambda$CDM limit ($\log_{10}(\ln D) \to 16$) to
+    the prior density.
+  \item The \textbf{Akaike Information Criterion} (AIC), defined as
+    $\mathrm{AIC} = \chi^2_{\min} + 2k$, where $k$ is the number of
+    free parameters.
+  \item The \textbf{Bayesian Information Criterion} (BIC), defined as
+    $\mathrm{BIC} = \chi^2_{\min} + k \ln N_{\rm data}$, where
+    $N_{\rm data} \approx 669$ is the effective number of data points.
+\end{enumerate}
+The $\Lambda$CDM model has $k = 6$ parameters, while the CCR model has
+$k = 8$ (adding $\log_{10}(\ln D)$ and~$\alpha$). These criteria
+penalise model complexity and allow a quantitative assessment of whether
+the two additional CCR parameters are warranted by the data.
