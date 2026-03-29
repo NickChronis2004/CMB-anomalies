@@ -1,0 +1,110 @@
+theory:
+  camb:
+    extra_args:
+      lens_potential_accuracy: 1
+  ccr_theory_cobaya.CCR_Primordial:
+    python_path: D:\MyDocs\CMB_CCR\CMB-anomalies - JCAP\analysis\scripts
+likelihood:
+  planck_2018_lowl.TT: null
+  planck_2018_lowl.EE: null
+  planck_2018_highl_plik.TTTEEE_lite: null
+params:
+  log_lnD:
+    prior:
+      min: 12.0
+      max: 16.0
+    ref:
+      dist: norm
+      loc: 14.3
+      scale: 0.3
+    proposal: 0.3
+    latex: \log_{10}(\ln D)
+  alpha_ccr:
+    prior:
+      min: 1.0
+      max: 6.0
+    ref:
+      dist: norm
+      loc: 2.0
+      scale: 0.5
+    proposal: 0.5
+    latex: \alpha
+  ombh2:
+    prior:
+      min: 0.005
+      max: 0.1
+    ref:
+      dist: norm
+      loc: 0.02237
+      scale: 0.00015
+    proposal: 0.0001
+    latex: \Omega_b h^2
+  omch2:
+    prior:
+      min: 0.001
+      max: 0.99
+    ref:
+      dist: norm
+      loc: 0.12
+      scale: 0.001
+    proposal: 0.0008
+    latex: \Omega_c h^2
+  H0:
+    prior:
+      min: 40
+      max: 100
+    ref:
+      dist: norm
+      loc: 67.36
+      scale: 0.5
+    proposal: 0.4
+    latex: H_0
+  tau:
+    prior:
+      dist: norm
+      loc: 0.0544
+      scale: 0.0073
+    ref:
+      dist: norm
+      loc: 0.0544
+      scale: 0.005
+    proposal: 0.003
+    latex: \tau_{\rm reio}
+  As:
+    prior:
+      min: 5.0e-10
+      max: 5.0e-09
+    ref:
+      dist: norm
+      loc: 2.1e-09
+      scale: 3.0e-11
+    proposal: 2.0e-11
+    latex: A_s
+  ns:
+    prior:
+      min: 0.8
+      max: 1.2
+    ref:
+      dist: norm
+      loc: 0.9649
+      scale: 0.004
+    proposal: 0.003
+    latex: n_s
+  kc:
+    derived: true
+    latex: k_c\,[\mathrm{Mpc}^{-1}]
+  Hinf_GeV:
+    derived: true
+    latex: H_{\rm inf}\,[\mathrm{GeV}]
+sampler:
+  mcmc:
+    burn_in: 300
+    max_tries: 10000
+    Rminus1_stop: 0.005
+    Rminus1_cl_stop: 0.2
+    covmat: auto
+    oversample_power: 0.4
+    drag: true
+    proposal_scale: 2.4
+    learn_proposal: true
+output: ccr_mcmc

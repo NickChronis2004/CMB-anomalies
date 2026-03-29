@@ -112,9 +112,9 @@ cl_lcdm, _ = compute_cl()
 ells = np.arange(cl_lcdm.shape[0])
 
 # Best-fit from MCMC (Table 5): log10(lnD) = 15.2, alpha = 1.8
-print("Computing CCR best-fit (log10(lnD)=15.2, α=1.8)...")
-lnD_bestfit = 10**15.2
-cl_bestfit, kc_bestfit = compute_cl(lnD=lnD_bestfit, alpha=1.8)
+print("Computing CCR best-fit (log10(lnD)=15.7, α=4.1)...")
+lnD_bestfit = 10**15.7
+cl_bestfit, kc_bestfit = compute_cl(lnD=lnD_bestfit, alpha=4.1)
 print(f"  Best-fit: lnD={lnD_bestfit:.2e}, kc={kc_bestfit:.3e} Mpc^-1")
 
 # Active cutoff example: lnD ~ 2.2e13 (Contaldi-like)
@@ -172,7 +172,7 @@ ax.plot(ells_plot, cl_fid[2:51, 0], 'b-', lw=2,
         label=rf'CCR: $\ln D = 2\times10^{{14}}$, $k_c = {kc_fid:.1e}$ Mpc$^{{-1}}$ ($\alpha=2$)',
         zorder=8)
 ax.plot(ells_plot, cl_bestfit[2:51, 0], 'g--', lw=2,
-        label=rf'CCR best-fit: $\ln D = 10^{{15.2}}$, $\alpha=1.8$ (ΛCDM-like)',
+        label=rf'CCR best-fit: $\ln D = 10^{{15.7}}$, $\alpha=4.1$ ($\Lambda$CDM-like)',
         zorder=8)
 
 ax.set_xlabel(r'Multipole $\ell$')

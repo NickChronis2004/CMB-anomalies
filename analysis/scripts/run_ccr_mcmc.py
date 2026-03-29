@@ -173,7 +173,7 @@ def run_mcmc():
             'mcmc': {
                 'burn_in': 300,
                 'max_tries': 10000,
-                'Rminus1_stop': 0.01,
+                'Rminus1_stop': 0.005,
                 'Rminus1_cl_stop': 0.2,
                 'covmat': 'auto',
                 'oversample_power': 0.4,
@@ -188,7 +188,7 @@ def run_mcmc():
     
     print("\nLaunching CCR MCMC...")
     print("Architecture: CAMB (transfers+Cl) + CCR_Primordial (P(k))")
-    print("Convergence target: R-1 < 0.01")
+    print("Convergence target: R-1 < 0.005")
     print("Output: chains/ccr_mcmc.*\n")
     
     updated_info, sampler = cobaya_run(info)

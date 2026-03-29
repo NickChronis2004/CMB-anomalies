@@ -25,8 +25,8 @@ following principal results:
     excellent agreement with the Planck 2018 baseline, and the CCR
     parameters show no correlations with the cosmological parameters.
     The CCR modification does not degrade any existing constraints.
-  \item The Savage--Dickey Bayes factor is $\ln B_{01} = 0.06$,
-    indicating no statistical preference for either model. The
+  \item The Savage--Dickey Bayes factor satisfies $|\ln B_{01}| < 1$,
+    indicating no meaningful statistical preference for either model. The
     information criteria (AIC, BIC) penalise the two extra CCR
     parameters, as expected for a model that does not improve the fit.
   \item The joint posterior excludes the region of simultaneously small
@@ -394,14 +394,13 @@ generation in a finite-dimensional Hilbert space would require solving
 the Mukhanov--Sasaki equation with an explicitly finite mode expansion,
 which is beyond the scope of this phenomenological study.
 
-\paragraph{Single MCMC chain.}
-The posterior was sampled with a single Metropolis--Hastings chain
-achieving $R - 1 = 0.012$, marginally above the target $R - 1 < 0.01$.
-While the trace plots and marginal distributions show no evidence of
-incomplete mixing (appendix~\ref{app:convergence}), future analyses
-should employ multiple independent chains and/or nested sampling to
-provide more robust convergence diagnostics and direct evidence
-computation.
+\paragraph{Single MCMC chain.} The posterior was sampled with a single 
+Metropolis--Hastings chain achieving $R-1 < 0.005$ via the split-chain 
+method, well below the conventional $R-1 < 0.01$ threshold. The trace plots
+and marginal distributions confirm adequate mixing (appendix~\ref{app:convergence}). 
+While a single chain with split-chain diagnostics is standard practice in 
+cosmological parameter estimation, future analyses could employ multiple 
+independent chains and/or nested sampling to provide direct evidence computation.
 
 \paragraph{Planck-only data.}
 This analysis uses Planck 2018 data exclusively.  Incorporating
@@ -422,7 +421,7 @@ $k \lesssim 10^{-3}\,\mathrm{Mpc}^{-1}$ could provide an
 independent probe of the CCR suppression.
 
 \paragraph{Goodness of fit.}
-The best-fit CCR model achieves $\chi^2_{\min} = 1003.4$ for
+The best-fit CCR model achieves $\chi^2_{\min} = 1002.6$ for
 approximately 661 effective degrees of freedom
 ($N_{\rm data} \approx 669$ minus 8 parameters), yielding
 $\chi^2/\mathrm{dof} \approx 1.52$.  This value is comparable to the $\Lambda$CDM 

@@ -135,13 +135,7 @@ We present diagnostic tests for the MCMC analysis described in
 section~\ref{sec:methodology}.
 
 \paragraph{Chain statistics.}
-The single Metropolis--Hastings chain comprises 11\,681 samples with a
-total weight of 41\,849 (mean multiplicity 3.6), corresponding to an
-acceptance rate of 28\% and an effective sample size
-$N_{\rm eff} \simeq 5\,650$ (computed as
-$N_{\rm eff} = (\sum w_i)^2/\sum w_i^2$). The final Gelman--Rubin
-statistic, computed via the split-chain method, is
-$R - 1 = 0.012$.
+The single Metropolis--Hastings chain comprises $24\,528$ samples (after 30\% burn-in removal) with a total weight of $82\,649$ (mean multiplicity~$3.4$), corresponding to an acceptance rate of $\sim 30$\% and an effective sample size $N_{\rm eff} \simeq 5\,400$ (computed as $N_{\rm eff} = (\sum w_i)^2 / \sum w_i^2$). The final Gelman--Rubin statistic, computed via the split-chain method, is $R - 1 < 0.005$, well below the conventional $R - 1 < 0.01$ target used in cosmological analyses.
 
 \paragraph{Trace plots.}
 Figure~\ref{fig:trace_plots} shows the trace plots and running weighted
@@ -154,16 +148,11 @@ the flat posterior (the chain explores the full prior range uniformly).
 
 \paragraph{Gelman--Rubin diagnostic.}
 Figure~\ref{fig:gelman_rubin} shows the split-chain $R - 1$ statistic
-as a function of sample number. All parameters fluctuate near or below
-the $R - 1 = 0.01$ target for the majority of the chain, with the
-final value of $R - 1 = 0.012$ reflecting transient excursions rather
-than systematic non-convergence.
+as a function of sample number. All parameters fall well below the $R - 1 = 0.01$ target, with the final value of $R - 1 < 0.005$ confirming robust convergence.
 
 \paragraph{$\chi^2$ trace.}
 Figure~\ref{fig:chi2_trace} shows the $\chi^2$ trace, confirming that
-the chain does not become trapped in local minima. The running mean
-stabilises at $\langle\chi^2\rangle = 1008.7$ with minimum
-$\chi^2_{\min} = 1002.7$.
+the chain does not become trapped in local minima. The running mean stabilises at $\langle\chi^2\rangle = 1008.9$ with minimum $\chi^2_{\min} = 1002.6$.
 
 \begin{figure}[p]
   \centering
@@ -180,7 +169,7 @@ $\chi^2_{\min} = 1002.7$.
   \caption{Split-chain Gelman--Rubin diagnostic $R - 1$ as a function
     of sample number. The dashed line marks the $R - 1 = 0.01$ target.
     All parameters fluctuate near or below $R - 1 = 0.01$ for the
-    majority of the chain, with a final value of $R - 1 = 0.012$.}
+    majority of the chain, with a final value of $R - 1 < 0.005$.}
   \label{fig:gelman_rubin}
 \end{figure}
 
@@ -188,8 +177,8 @@ $\chi^2_{\min} = 1002.7$.
   \centering
   \includegraphics[width=\linewidth]{fig_chi2_trace}
   \caption{$\chi^2$ trace plot. The running mean (black) stabilises at
-    $\langle\chi^2\rangle = 1008.7$; the minimum is
-    $\chi^2_{\min} = 1002.7$.}
+    $\langle\chi^2\rangle = 1008.9$; the minimum is
+    $\chi^2_{\min} = 1002.6$.}
   \label{fig:chi2_trace}
 \end{figure}
 

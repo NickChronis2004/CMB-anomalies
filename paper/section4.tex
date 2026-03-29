@@ -20,14 +20,14 @@ modification does not introduce tension at high multipoles.
 Parameter & CCR constraint (68\% CL) & Planck 2018 $\Lambda$CDM \\
 \midrule
 $\log_{10}(\ln D)$ & $14.0 \pm 1.2$ & --- \\
-$\alpha$ & $3.4 \pm 1.4$ & --- \\
-$k_c\;[\mathrm{Mpc}^{-1}]$ & $0.00048^{+0.00007}_{-0.00051}$ & --- \\
-$H_0\;[\mathrm{km\,s^{-1}\,Mpc^{-1}}]$ & $67.24 \pm 0.58$ & $67.36 \pm 0.54$ \\
-$\Omega_b h^2$ & $0.02236 \pm 0.00014$ & $0.02237 \pm 0.00015$ \\
-$\Omega_c h^2$ & $0.1202 \pm 0.0013$ & $0.1200 \pm 0.0012$ \\
+$\alpha$ & $3.5 \pm 1.4$ & --- \\
+$k_c\;[\mathrm{Mpc}^{-1}]$ & $0.00050^{+0.00062}_{-0.00045}$ & --- \\
+$H_0\;[\mathrm{km\,s^{-1}\,Mpc^{-1}}]$ & $67.27 \pm 0.60$ & $67.36 \pm 0.54$ \\
+$\Omega_b h^2$ & $0.02236 \pm 0.00015$ & $0.02237 \pm 0.00015$ \\
+$\Omega_c h^2$ & $0.1202 \pm 0.0014$ & $0.1200 \pm 0.0012$ \\
 $\tau$ & $0.054 \pm 0.005$ & $0.054 \pm 0.007$ \\
-$10^9 A_s$ & $2.101 \pm 0.023$ & $2.100 \pm 0.030$ \\
-$n_s$ & $0.9647 \pm 0.0042$ & $0.9649 \pm 0.0042$ \\
+$10^9 A_s$ & $2.101 \pm 0.025$ & $2.100 \pm 0.030$ \\
+$n_s$ & $0.9650 \pm 0.0042$ & $0.9649 \pm 0.0042$ \\
 \bottomrule
 \end{tabular}
 \caption{Marginalised parameter constraints from the CCR MCMC analysis
@@ -74,11 +74,11 @@ observed low-$\ell$ spectrum.
 \subsection{Model comparison}
 \label{sec:model_comparison}
 
-The best-fit CCR model achieves $\chi^2_{\min} = 1003.4$, with best-fit
-parameters $\log_{10}(\ln D) = 15.2$ and $\alpha = 1.8$. This best-fit
+The best-fit CCR model achieves $\chi^2_{\min} = 1002.6$, with best-fit
+parameters $\log_{10}(\ln D) = 15.7$ and $\alpha = 4.1$. This best-fit
 point lies in the $\Lambda$CDM-like regime
-($\ln D = 1.6 \times 10^{15}$, corresponding to
-$k_c = 4.6 \times 10^{-5}\;\mathrm{Mpc}^{-1}$), where the suppression
+($\ln D \simeq 5.6 \times 10^{15}$, corresponding to
+$k_c \simeq 3.1 \times 10^{-5}\;\mathrm{Mpc}^{-1}$), where the suppression
 is negligible across all observable multipoles.
 
 We compare the best-fit $\chi^2$ values in two distinct regions of
@@ -96,11 +96,10 @@ identical fit to the $\Lambda$CDM-like region.
 
 The Savage--Dickey density ratio yields
 \begin{equation}
-\ln B_{01} = 0.06\,,
+|\ln B_{01}| < 1 \, ,
 \end{equation}
 where $B_{01}$ is the Bayes factor for $\Lambda$CDM relative to CCR.
-This value is effectively zero on the Jeffreys scale, indicating no
-statistical preference for either model.
+This value indicates no meaningful preference for either model on the Jeffreys scale ($|\ln B| < 1$).
 
 The information criteria yield
 \begin{equation}
@@ -160,7 +159,7 @@ of the standard model with a well-defined $\Lambda$CDM limit.
 Figure~\ref{fig:cl_data_comparison} presents a direct comparison of the
 Planck 2018 Commander low-$\ell$ TT power spectrum~\cite{Planck:2018likelihood}
 with the CCR predictions for three representative points in parameter space:
-(i)~the MCMC best-fit (log$_{10}(\ln D) = 15.2$, $\alpha = 1.8$), which lies
+(i)~the MCMC best-fit (log$_{10}(\ln D) = 15.7$, $\alpha = 4.1$), which lies
 in the $\Lambda$CDM-like regime with negligible suppression;
 (ii)~the fiducial CCR model ($\ln D = 2\times 10^{14}$, $\alpha = 2$),
 which produces a modest $\sim 15\%$ suppression at $\ell = 2$; and
@@ -172,7 +171,7 @@ $\sim 50\%$ suppression at the quadrupole.
 All three models are visually consistent with the data, as the Planck
 data points scatter broadly within the cosmic variance envelope. The
 best-fit CCR model is indistinguishable from $\Lambda$CDM at all
-multipoles, with a maximum fractional deviation of $8.6\times 10^{-3}$.
+multipoles, with a maximum fractional deviation of $< 10^{-2}$.
 
 Figure~\ref{fig:cl_residuals} shows the fractional residuals
 $(\mathcal{D}_\ell^{\rm CCR} - \mathcal{D}_\ell^{\Lambda\rm CDM}) /
