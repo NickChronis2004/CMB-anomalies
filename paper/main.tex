@@ -57,8 +57,8 @@ tensor-to-scalar ratio $r = 16/(A_s \ln D)$, providing a two-observable
 consistency test with future B-mode experiments.}
 
 % --- Keywords ---
-\keywords{CMB power spectrum; primordial power spectrum; inflation; infrared cutoff; 
-Bayesian inference; holographic entropy}
+\keywords{CMB power spectrum; primordial power spectrum; inflation; infrared cutoff;
+large-scale anomalies; Bayesian inference; holographic entropy}
 
 % ============================================================
 \begin{document}
@@ -146,10 +146,6 @@ $\mathcal{P}_{\rm CCR}(k) = \mathcal{P}_{\Lambda\rm CDM}(k)
 \left[1 - \exp(-(k/k_c)^\alpha)\right]$, where $\alpha$ controls the
 sharpness of the transition.
 
-This paper represents the first attempt to confront the CCR framework with
-observational data, by deriving constraints on $D$ from the Planck 2018 CMB
-power spectrum.
-
 % --- Scope and contribution ---
 \paragraph{Scope and contribution.}
 This paper represents the first attempt to confront the CCR framework
@@ -169,14 +165,14 @@ Beyond constraining $\ln D$, this work establishes the complete
 observational infrastructure---modified Boltzmann code, MCMC pipeline,
 and forecast methodology---needed to test the CCR framework against
 current and future CMB data.  The null result obtained here is itself 
-informative: it quantifiesthe detection threshold 
+informative: it quantifies the detection threshold 
 ($\ln D \lesssim 10^{13}$ for a $3\sigma$ detection) that future experiments 
 must surpass, setting the stage for LiteBIRD and CMB-S4. We emphasise that 
 this work represents a \emph{minimal phenomenological implementation} of the
 CCR framework;
 a first-principles derivation of the transition shape $\alpha$ from
 the Mukhanov--Sasaki equation in a finite-dimensional Hilbert space
-is the natural next step.
+is the natural next step, and will be addressed in forthcoming work.
 
 % --- Outline ---
 The paper is organised as follows. Section~\ref{sec:theory} derives the
@@ -201,13 +197,23 @@ physical implications, limitations, and prospects for future tests.
 
 % ============================================================
 % Acknowledgments
-\acknowledgments
-
+\section*{Acknowledgments}
 We acknowledge the use of data from the Planck Legacy Archive
-(\url{https://pla.esac.esa.int}) and the Planck 2018 likelihood
-code. This work made use of the \textsc{Cobaya}~\cite{Torrado:2021},
-\textsc{CAMB}~\cite{Lewis:1999}, and \textsc{GetDist} software
-packages.
+(\url{https://pla.esac.esa.int}) and the Planck 2018 likelihood code.
+This work made use of the \textsc{Cobaya}~\cite{Torrado:2021},
+\textsc{CAMB}~\cite{Lewis:1999}, and \textsc{GetDist} software packages.
+The MCMC analysis was performed on [whatever machine you used, e.g.
+``personal workstation'' or ``University of Crete computing facilities''].
+
+\paragraph{Data and code availability.}
+The modified \textsc{CAMB}/\textsc{Cobaya} pipeline, MCMC chains,
+and analysis scripts used in this work are publicly available at
+\url{https://github.com/NickChronis2004/CMB-amomalies.git}.
+
+
+% ============================================================
+% Appendices (after bibliography, per JCAP style)
+\input{appendicies}
 
 % ============================================================
 % Bibliography
@@ -353,17 +359,17 @@ PTEP \textbf{2023} (2023) 042F01
 \bibitem{CMBS4:2016}
 CMB-S4 Collaboration,
 \textit{CMB-S4 Science Book, First Edition},
-[\href{https://arxiv.org/abs/1610.02743}{arXiv:1610.02743}].
+[\href{https://arxiv.org/abs/1610.02743}{arXiv:1610.02743}] (2016).
 
 \bibitem{Banks:2000}
 T.~Banks,
 \textit{Cosmological Breaking of Supersymmetry, or Little Lambda Goes Back to the Future II},
-[\href{https://arxiv.org/abs/hep-th/0007146}{hep-th/0007146}].
+[\href{https://arxiv.org/abs/hep-th/0007146}{hep-th/0007146}] (2000).
 
 \bibitem{Banks:2001}
 T.~Banks and W.~Fischler,
 \textit{M-Theory Observables for Cosmological Space-Times},
-[\href{https://arxiv.org/abs/hep-th/0102077}{hep-th/0102077}].
+[\href{https://arxiv.org/abs/hep-th/0102077}{hep-th/0102077}] (2001).
 
 \bibitem{Bousso:2000}
 R.~Bousso,
@@ -386,7 +392,7 @@ Contemp.\ Phys.\ \textbf{49} (2008) 71
 \bibitem{Susskind:2003}
 L.~Susskind,
 \textit{The Anthropic Landscape of String Theory},
-[\href{https://arxiv.org/abs/hep-th/0302219}{hep-th/0302219}].
+[\href{https://arxiv.org/abs/hep-th/0302219}{hep-th/0302219}] (2003).
 
 \bibitem{Dyson:2002}
 L.~Dyson, M.~Kleban, and L.~Susskind,
@@ -415,7 +421,8 @@ Nucl.\ Phys.\ B \textbf{626} (2002) 395
 DESI Collaboration,
 \textit{DESI 2024 VI: Cosmological Constraints from the
 Measurements of Baryon Acoustic Oscillations},
-JCAP \textbf{02} (2025) [arXiv:2404.03002].
+JCAP \textbf{02} (2025) 021
+[\href{https://arxiv.org/abs/2404.03002}{arXiv:2404.03002}].
 
 \bibitem{DESI:2025}
 DESI Collaboration,
@@ -444,18 +451,14 @@ JHEP \textbf{01} (2024) 132 [arXiv:2303.16315].
 \bibitem{Tajima:2024}
 H.~Tajima and Y.~Nambu,
 \textit{Stochastic inflation and entropy bound in de Sitter spacetime},
-[arXiv:2405.10837].
+[\href{https://arxiv.org/abs/2405.10837}{arXiv:2405.10837}] (2024).
 
 \bibitem{Ghigna:2024}
 T.~Ghigna et al. (LiteBIRD Collaboration),
 \textit{The LiteBIRD mission to explore cosmic inflation},
 SPIE Astronomical Telescopes + Instrumentation 2024
-[arXiv:2406.02724].
+[\href{https://arxiv.org/abs/2406.02724}{arXiv:2406.02724}] (2024).
 
 \end{thebibliography}
-
-% ============================================================
-% Appendices (after bibliography, per JCAP style)
-\input{appendicies}
 
 \end{document}
